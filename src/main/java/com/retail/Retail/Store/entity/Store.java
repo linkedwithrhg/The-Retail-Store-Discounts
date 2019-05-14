@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Store {
+public class Store  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

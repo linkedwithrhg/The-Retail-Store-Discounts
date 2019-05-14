@@ -1,12 +1,16 @@
 package com.retail.Retail.Store.entity;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User {
 
     @Id
@@ -27,7 +31,7 @@ public class User {
     private String user_address;
 
     @NotNull
-    @CreationTimestamp
+    @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="created_date")
     private Date created_date;

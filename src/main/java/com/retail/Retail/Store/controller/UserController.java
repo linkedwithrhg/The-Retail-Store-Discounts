@@ -7,18 +7,24 @@ import com.retail.Retail.Store.service.UserServiceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
 
+    Date CuDate= new Date();
     @Autowired
     private UserServiceimpl userServiceimpl;
 
     @PostMapping(value = "/addUser")
     public User addUser(@RequestBody User user)
     {
+//        user.setCreated_date(CuDate);
+
+        System.out.println("Hello" + user.getCreated_date());
+        System.out.println("Hello" + user.getUser_name());
        return userServiceimpl.addUser(user);
     }
 
